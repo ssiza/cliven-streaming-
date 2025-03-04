@@ -1,0 +1,110 @@
+---
+interface Props {
+  imageSrc: string;
+  title: string;
+  description: string;
+  cashAppURL: string;
+  contactURL: string;
+}
+
+const { imageSrc, title, description, cashAppURL, contactURL } = Astro.props;
+---
+
+<div class="service-card">
+  <div class="image-container">
+    <img src={imageSrc} alt="Service Thumbnail" />
+  </div>
+  <div class="service-details">
+    <h2>{title}</h2>
+    <p>{description}</p>
+    <div class="buttons">
+      <a href={cashAppURL} class="button cash-app-button">CASH APP</a>
+      <a href={contactURL} class="button contact-to-pay-button">CONTACT TO PAY</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .service-card {
+    background-color: black;
+    border-radius: 8px;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    /* Use flexbox for layout */
+    align-items: center;
+    /* Vertically align items */
+    text-align: left;
+    font-family: sans-serif;
+    /* Choose your font */
+  }
+
+  .image-container {
+    width: 75px;
+    height: 75px;
+    border-radius: 4px;
+    float: left;
+    margin-right: 15px;
+    background-color: white;
+    /* Add white background */
+    overflow: hidden;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Use contain to fit the image without cutting it off */
+  }
+
+  .service-card h2 {
+    font-size: 1.2em;
+    /* Adjust the header */
+    font-weight: normal;
+    /* Remove bolding */
+    margin-bottom: 5px;
+  }
+
+  .service-card p {
+    font-size: 0.85em;
+    /* Adjust the paragraph */
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    /* Add space above the buttons */
+  }
+
+  .button {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 6px 10px;
+    /* Adjust padding in buttons */
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    /* Make text bold */
+    transition: background-color 0.3s;
+    font-size: 0.7em;
+    /* Adjust font-size in buttons */
+  }
+
+  .cash-app-button:hover,
+  .contact-to-pay-button:hover {
+    background-color: #ddd;
+  }
+
+  /* Ensure the content clears floated image */
+  .service-card::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>

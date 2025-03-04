@@ -1,3 +1,9 @@
+/* ==========================================================================
+      1. CSS Variables (Color Palette, Spacing, etc.)
+      ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 :root {
   --border-radius-1: 2px;
   --border-radius-2: 4px;
@@ -94,4 +100,1359 @@
   --purple-800: #382aa4;
   --purple-900: #292142;
   --purple-000: #f5f2fc;
+
+
+    --heading: #1c3d5a; /* Deep blue for a professional feel */
+    --text: #2c3e50; /* Dark grayish-blue for readability */
+    --text-muted: #6c757d; /* Soft gray for subtle text */
+    --primary: #0077b6; /* Modern blue for branding */
+    --primary-darker: #005f8a; /* Slightly darker shade for hover effects */
+    --highlight: #00b894; /* Teal for accents */
+    --button: #0077b6; /* Primary button color */
+    --button-hover: #005f8a; /* Darker blue on hover */
+    --lightBorder: #dee2e6; /* Subtle light border */
+    --light: #f8f9fa; /* Soft white background */
+    --white: #ffffff; /* Pure white */
+    --card-radius: 8px; /* Soft rounded corners */
+    
+    --card-bg-color: rgba(255, 255, 255, 0.85); /* Slight transparency for depth */
+    --background-color: #f4f7f9; /* Gentle, warm background */
+    --text-color: #2c3e50; /* Same as --text for consistency */
+    --heading-color: #1c3d5a; /* Professional deep blue */
+    --link-color: #007bff; /* Classic blue for links */
+    --link-hover-color: #0056b3; /* Darker blue on hover */
+    --card-background-color: #ffffff; /* Clean card design */
+    --card-border-color: #dee2e6; /* Subtle contrast */
+    --button-color: #0077b6; /* Unified button color */
+    --button-hover-color: #005f8a; /* Slightly darker on hover */
+    --accent-color: #00b894; /* Refreshing green for accents */
+    --border-radius: 8px; /* Smooth design */
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+  }
+
+/* ==========================================================================
+      2. General Styles (Body, Headings, Links, etc.)
+      ========================================================================== */
+
+html,
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-secondary);
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  margin: 0;
+  padding: 5rem 0 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--heading-color);
+  font-family: var(--font-primary);
+  letter-spacing: 0.05em; /* Slightly increase letter spacing */
+}
+
+a:link,
+a:visited {
+  color: var(--link-color);
+  text-decoration: underline;
+  text-decoration-color: var(--link-color);
+  font-weight: 600;
+}
+
+a:hover,
+a:focus {
+  text-decoration-color: var(--link-hover-color);
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.button,
+a.button {
+  background: var(--button-color);
+  border-radius: var(--border-radius);
+  color: var(--card-background-color);
+  display: inline-block;
+  font-weight: 800;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  width: max-content;
+  transition-duration: 0.2s;
+  text-decoration: none;
+  margin-top: auto;
+  box-shadow: var(--box-shadow); /* Add shadow to buttons */
+}
+
+a.button:hover,
+a.button:focus,
+.button:hover,
+.button:focus {
+  background: var(--button-hover-color);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increase shadow on hover */
+}
+
+/* Remove text underlines globally */
+h1, h2, h3, a, a:link, a:visited, a:hover, a:focus {
+  text-decoration: none;
+}
+
+/* Set background image for the entire page */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/background.gif');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5; /* Adjust this value to control opacity */
+  z-index: -1; /* Ensure the background is behind all content */
+}
+
+/* Add a semi-transparent overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.869); /* Adjust the color and opacity as needed */
+  z-index: -1; /* Ensure the overlay is behind all content */
+}
+
+/* ==========================================================================
+      3. Layout Styles (Header, Navigation, Main, Footer)
+      ========================================================================== */
+
+.container,
+.footer {
+  margin: 0 auto;
+  text-align: center;
+  width: min(90vw, 900px);
+}
+
+.heading {
+  font-size: 2.5rem;
+  margin: 0;
+  text-align: center;
+}
+
+.footer {
+  color: var(--text-color);
+  font-size: 0.75rem;
+  margin-top: 4rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:focus,
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.footer li {
+  margin: 0 1em;
+}
+
+.heart {
+  display: inline-block;
+  vertical-align: top;
+  width: 1.1rem;
+}
+
+.heart img {
+  display: block;
+  width: 100%;
+}
+
+/* Basic Header and Navigation Styles */
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.header-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.header-nav li {
+  margin-left: 1em;
+  margin: 0 1rem;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: bold;
+}
+
+/* Custom Styles */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border-radius: var(--border-radius);
+  color: #000000;
+}
+
+.header-container .logo img {
+  height: 150px; /* Adjust the height as needed */
+  width: auto;
+}
+
+.header-container a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header-container a:hover,
+.header-container a:focus {
+  text-decoration: underline;
+}
+
+/* Navigation Styles */
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.nav-list li {
+  margin: 0.5rem 0;
+}
+
+.nav-list a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--link-hover-color);
+}
+
+/* Remove the hamburger menu styles */
+.hamburger-menu {
+  display: none;
+}
+
+/* Navigation Styles */
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li {
+  margin: 0 1rem;
+}
+
+.nav-list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--link-hover-color);
+}
+
+.header-divider {
+  border: none;
+  border-top: 1px solid var(--card-border-color);
+  margin: 1rem 0;
+}
+
+/* Remove the header description styles */
+.header-description {
+  display: none;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .nav-list {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .nav-list li {
+    margin: 0 1rem;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-list {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+/* ==========================================================================
+      4. Component-Specific Styles (Service List, About Excerpt, etc.)
+      ========================================================================== */
+
+.steps {
+  background: var(--card-background-color);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: min(90vw, 250px);
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 5rem 5vw;
+  width: 100vw;
+}
+
+@media (min-width: 550px) {
+  .steps {
+    grid-template-columns: repeat(2, min(calc(50% - 1rem), 250px));
+  }
+}
+
+@media (min-width: 1050px) {
+  .steps {
+    grid-template-columns: repeat(4, min(calc(25% - 1.5rem), 250px));
+  }
+}
+
+.step {
+  background: var(--card-background-color);
+  border: 1px solid var(--card-border-color);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  padding: 1rem 1.5rem 1.5rem;
+  text-align: left;
+  box-shadow: var(--box-shadow);
+}
+
+.stepHeading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* New Styles for About Section */
+.about-excerpt {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: var(--card-background-color);
+  border: 1px solid var(--card-border-color);
+  border-radius: var(--border-radius);
+}
+
+.about-excerpt h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Service List Styles */
+.service-list {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.service-card-container {
+  background-color: var(--card-background-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.37); /* Semi-transparent background */
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-cards {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.service-card {
+  background-color: var(--card-background-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: 1rem;
+  width: 300px;
+}
+
+.service-card:not(:last-child) {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.service-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.service-card .svg-image {
+  width: 100px; /* Adjust width for SVG images */
+  height: auto;
+}
+
+.service-card .raster-image {
+  width: 100%; /* Full width for raster images */
+  height: auto;
+}
+
+/* About Section Styles (consistent with service cards) */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--card-background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin: 2rem auto; /* Center the container */
+  max-width: 800px; /* Set a maximum width */
+  text-align: center; /* Center the text */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border-radius: var(--border-radius);
+  padding: 1rem;
+}
+
+.about-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.about-section .button {
+  display: inline-block;
+  background-color: var(--button-color);
+  color: var(--card-background-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.about-section .button:hover,
+.about-section .button:focus {
+  background-color: var(--button-hover-color);
+}
+
+/* WhatsApp Button Styles */
+.whatsapp-button {
+  display: inline-block;
+  background-color: #25D366;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.whatsapp-button:hover,
+.whatsapp-button:focus {
+  background-color: #128C7E;
+}
+
+/* Add these styles to your global.css file */
+
+/* Hide the full description by default */
+.full-description {
+  display: none;
+}
+
+/* Show the full description when the 'visible' class is applied */
+.full-description.visible {
+  display: inline;
+}
+
+/* Hide the short description when the 'hidden' class is applied */
+.short-description.hidden {
+  display: none;
+}
+
+/* Style the toggle link */
+.toggle-description {
+  color: var(--link-color);
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 0.5rem;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: var(--background-color);
+  background-color: rgba(255, 255, 255, 0); /* Semi-transparent background */
+  border-radius: var(--border-radius);
+  padding: 1rem;
+}
+
+.hero-card {
+  background-color: var(--card-background-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  max-width: 1200px;
+  width: 100%;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-text {
+  max-width: 60%;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+}
+
+.hero-text h2 {
+  font-size: 1.25rem; /* Reduce font size for the subheading */
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #c2e8f8; 
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  background-color: #a04000; /* Darker burnt orange on hover */
+}
+
+.hero-image {
+  max-width: 40%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  .service-card {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .service-card img {
+    width: 80%; /* Reduce image size for smaller screens */
+  }
+
+  .payment-options {
+    flex-direction: column; /* Stack payment options vertically */
+    padding: 0.5rem;
+  }
+
+  .cashapp-button .payment-icon,
+  .whatsapp-button .payment-icon {
+    width: 32px; /* Adjust icon size for smaller screens */
+    height: 32px;
+  }
+
+  .cashapp-button .payment-icon {
+    width: 36px; /* Adjust width for smaller screens */
+    height: 36px; /* Adjust height for smaller screens */
+  }
+
+  .header-container,
+  .footer,
+  .service-card-container,
+  .hero-section,
+  .about-section,
+  .contact-section {
+    padding: 0.5rem;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-list {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .header-container .logo img {
+    height: 80px; /* Adjust the height for smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .header-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-nav li {
+    margin: 0.5em 0;
+  }
+
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure the header container takes full width */
+  }
+
+  .header-container h1 {
+    order: 1;
+    font-size: 1.2rem; /* Further reduce font size for mobile */
+    margin-left: 1rem; /* Add some left margin */
+    text-align: left; /* Align to the left */
+  }
+
+  .nav-list {
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .header-description {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .bottom-tab-bar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .payment-options {
+    flex-direction: column; /* Stack payment options vertically */
+    padding: 0.5rem;
+  }
+
+  .cashapp-button .payment-icon,
+  .whatsapp-button .payment-icon {
+    width: 28px; /* Adjust icon size for smaller screens */
+    height: 28px;
+  }
+
+  .cashapp-button .payment-icon {
+    width: 32px; /* Adjust width for smaller screens */
+    height: 32px; /* Adjust height for smaller screens */
+  }
+
+  .header-container .logo img {
+    height: 150px; /* Adjust the height for smaller screens */
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .bottom-tab-bar {
+    display: none;
+  }
+}
+
+/* Bottom Tab Bar Styles */
+.bottom-tab-bar {
+  display: none;
+}
+
+.bottom-tab-bar ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(--card-background-color);
+  box-shadow: var(--box-shadow);
+}
+
+.bottom-tab-bar li {
+  flex: 1;
+  text-align: center;
+}
+
+.bottom-tab-bar a {
+  display: block;
+  padding: 1rem;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.bottom-tab-bar a:hover,
+.bottom-tab-bar a:focus {
+  background-color: var(--link-hover-color);
+  color: #ffffff;
+}
+
+/* About Section Styles */
+.about-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.about-card {
+  background-color: var(--card-background-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.about-card h2 {
+  font-size: 2rem;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+}
+
+.about-card p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+/* Contact Section Styles */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.contact-card {
+  background-color: var(--card-background-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border-radius: var(--border-radius);
+  padding: 1rem;
+}
+
+.contact-card h2 {
+  font-size: 2rem;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form .form-group {
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--card-border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  color: var (--text-color);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact-form button {
+  background-color: var(--button-color);
+  color: var(--card-background-color);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+}
+
+.contact-form button:hover,
+.contact-form button:focus {
+  background-color: var(--button-hover-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 1rem;
+  }
+
+  .contact-form .form-group {
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.5rem;
+  }
+
+  .contact-form button {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Payment Options Styles */
+.payment-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 1rem;
+  background-color: #0000007b; /* Black background */
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.payment-method {
+  color: #ffffff; /* White text */
+  margin-right: 1rem;
+}
+
+.cashapp-button,
+.whatsapp-button {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the icon */
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.cashapp-button .payment-icon,
+.whatsapp-button .payment-icon {
+  width: 40px; /* Adjust width for larger icon */
+  height: 40px; /* Adjust height for larger icon */
+  vertical-align: middle; /* Ensure the icon is vertically centered */
+}
+
+.cashapp-button .payment-icon {
+  width: 75px; /* Adjust width for larger icon */
+  height: 75px; /* Adjust height for larger icon */
+  margin-right: 0; /* Remove margin */
+  vertical-align: middle; /* Ensure the icon is vertically centered */
+}
+
+.cashapp-button:hover,
+.cashapp-button:focus,
+.whatsapp-button:hover,
+.whatsapp-button:focus {
+  color: var(--link-hover-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .payment-options {
+    flex-direction: column; /* Stack payment options vertically */
+    padding: 0.5rem;
+  }
+
+  .cashapp-button .payment-icon,
+  .whatsapp-button .payment-icon {
+    width: 36px; /* Adjust icon size for smaller screens */
+    height: 36px;
+  }
+
+  .cashapp-button .payment-icon {
+    width: 36px; /* Adjust width for smaller screens */
+    height: 36px; /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .payment-options {
+    flex-direction: column; /* Stack payment options vertically */
+    padding: 0.5rem;
+  }
+
+  .cashapp-button .payment-icon,
+  .whatsapp-button .payment-icon {
+    width: 32px; /* Adjust icon size for smaller screens */
+    height: 32px;
+  }
+
+  .cashapp-button .payment-icon {
+    width: 32px; /* Adjust width for smaller screens */
+    height: 32px; /* Adjust height for smaller screens */
+  }
+}
+
+/* ==========================================================================
+      5. Utility Classes (Optional)
+      ========================================================================== */
+
+/* Flex Center Utility */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Grid Center Utility */
+.grid-center {
+  display: grid;
+  place-items: center;
+}
+
+/* ==========================================================================
+      6. Media Queries (Responsive Design)
+      ========================================================================== */
+
+/* Mobile-Specific Adjustments */
+@media (max-width: 600px) {
+  .header-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-nav li {
+    margin: 0.5em 0;
+  }
+
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure the header container takes full width */
+  }
+
+  .header-container h1 {
+    order: 1;
+    font-size: 1.2rem; /* Further reduce font size for mobile */
+    margin-left: 1rem; /* Add some left margin */
+    text-align: left; /* Align to the left */
+  }
+
+  .nav-list {
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .header-description {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .bottom-tab-bar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .bottom-tab-bar {
+    display: none;
+  }
+}
+
+/* Centered Header Styles */
+.centered-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Centered Header Styles for Home Page */
+.home-centered-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Full viewport height */
+  text-align: center;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.home-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border-radius: var(--border-radius);
+  color: #000000;
+}
+
+.home-header-container .logo img {
+  height: 150px; /* Adjust the height as needed */
+  width: auto;
+}
+
+.home-nav-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.home-nav-list li {
+  margin: 0 1rem;
+}
+
+.home-nav-list a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.home-nav-list a:hover,
+.home-nav-list a:focus {
+  color: var(--link-hover-color);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-header-container .logo img {
+    height: 120px; /* Adjust the height for smaller screens */
+  }
+
+  .home-nav-list {
+    flex-direction: column;
+  }
+
+  .home-nav-list li {
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-header-container .logo img {
+    height: 100px; /* Adjust the height for smaller screens */
+  }
+
+  .home-nav-list li {
+    margin: 0.5rem 0;
+  }
+}
+
+/* Centered Header Styles for Home Page */
+.home-centered-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.home-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border-radius: var(--border-radius);
+  color: #000000;
+}
+
+.home-header-container .logo img {
+  height: 150px; /* Adjust the height as needed */
+  width: auto;
+}
+
+.home-nav-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.home-nav-list li {
+  margin: 0 1rem;
+}
+
+.home-nav-list a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.home-nav-list a:hover,
+.home-nav-list a:focus {
+  color: var(--link-hover-color);
+}
+
+/* Ensure the footer is always at the bottom */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* About and Contact Container */
+.about-contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.about-section,
+.contact-section {
+  flex: 1 1 45%;
+  background-color: var(--card-background-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: var(--button-color);
+  color: var(--card-background-color);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.contact-form button:hover,
+.contact-form button:focus {
+  background-color: var(--button-hover-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-section,
+  .contact-section {
+    flex: 1 1 100%;
+  }
 }

@@ -1,0 +1,229 @@
+---
+import Layout from '../components/layout.astro';
+import ServiceCard from '../components/service-card.astro';
+---
+
+<Layout title="Services">
+  <style>
+    /* Declare the CSS variable */
+    :root {
+      --link-hover-color: red;
+    }
+
+    html,
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 2rem;
+    }
+
+    .service-card {
+      background-color: black;
+      border-radius: 8px;
+      color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+      font-family: sans-serif;
+    }
+
+    .service-card img {
+      width: 75px;
+      height: 75px;
+      border-radius: 4px;
+      float: left;
+      margin-right: 15px;
+      object-fit: cover;
+    }
+
+    .service-card h2 {
+      font-size: 1.2em;
+      font-weight: normal;
+      margin-bottom: 5px;
+    }
+
+    .service-card p {
+      font-size: 0.85em;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+    }
+
+    .button {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+      border-radius: 4px;
+      padding: 6px 10px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      font-size: 0.7em;
+    }
+
+    .cash-app-button:hover,
+    .contact-to-pay-button:hover {
+      background-color: #ddd;
+    }
+
+    .view-more-link {
+      color: red;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .home-header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 80%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /*Logo styles*/
+    .logo {
+      flex: 0 0 auto;
+    }
+
+    .logo img {
+      max-height: 150px;
+      width: auto;
+    }
+
+    /*Navigation Style*/
+    nav {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+    /*List*/
+    .home-nav-list {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .home-nav-list li {
+      margin: 0 1rem;
+    }
+
+    .home-nav-list a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    .home-nav-list a:hover,
+    .home-nav-list a:focus {
+      color: var(--link-hover-color);
+    }
+
+    footer {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 0.75rem;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer p {
+      margin: 0.2em 0;
+    }
+  </style>
+  <div class="home-centered-header">
+    <header class="home-header-container">
+      <a href="/" class="logo">
+        <img src="/images/logo.png" alt="Cliven Streaming Logo" />
+      </a>
+      <nav>
+        <ul class="home-nav-list">
+          <li><a href="/services" style="color: red;">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <ServiceCard
+        imageSrc="/images/netflix.png"
+        title="Netflix"
+        description="Get a 1-month Netflix subscription for $10."
+        cashAppURL="https://cash.app/$00Cliven"
+        contactURL="https://wa.me/+50939240298?text=I%20want%20to%20subscribe%20to%20Netflix."
+      />
+      <ServiceCard
+        imageSrc="/images/disney.png"
+        title="Disney+"
+        description="Get a 1-month Disney+ subscription for $8."
+        cashAppURL="https://cash.app/$00Cliven"
+        contactURL="https://wa.me/+50939240298?text=I%20want%20to%20subscribe%20to%20Disney+."
+      />
+    </main>
+    <section>
+        <div class="social-icons">
+          <a href="https://wa.me/+50939240298" target="_blank" rel="noopener noreferrer">
+            <img src="/images/whatsapp.png" alt="WhatsApp" />
+          </a>
+          <a href="https://www.facebook.com/clivenjay.haiti?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer">
+            <img src="/images/facebook.png" alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/clivenstreaming___?igsh=MXZudWdxNTV0cXlsZQ==" target="_blank" rel="noopener noreferrer">
+            <img src="/images/instagram.png" alt="Instagram" />
+          </a>
+        </div>
+        <style>
+          .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+          }
+
+          .social-icons img {
+            width: 40px;
+            height: 40px;
+          }
+        </style>
+      </section>
+
+    <footer class="footer">
+      <p>© {new Date().getFullYear()} Your Company. All rights reserved.</p>
+      <p>
+        <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
+        <br>
+        Powered by <a href="https://kflix.me">Kesny Toussaint</a>
+      </p>
+    </footer>
+  </div>
+</Layout>

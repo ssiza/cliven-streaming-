@@ -1,0 +1,200 @@
+
+---
+import Layout from '../components/layout.astro';
+import ServiceCard from '../components/service-card.astro';
+---
+
+<Layout title="Services">
+  <style>
+    /* Declare the CSS variable */
+    :root {
+      --link-hover-color: red;
+    }
+
+    html,
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 2rem;
+    }
+
+    
+
+    .button {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+      border-radius: 4px;
+      padding: 6px 10px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      font-size: 0.7em;
+    }
+
+    .cash-app-button:hover,
+    .contact-to-pay-button:hover {
+      background-color: #ddd;
+    }
+
+    .view-more-link {
+      color: red;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .home-header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 80%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /*Logo styles*/
+    .logo {
+      flex: 0 0 auto;
+    }
+
+    .logo img {
+      max-height: 150px;
+      width: auto;
+    }
+
+    /*Navigation Style*/
+    nav {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+    /*List*/
+    .home-nav-list {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .home-nav-list li {
+      margin: 0 1rem;
+    }
+
+    .home-nav-list a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    .home-nav-list a:hover,
+    .home-nav-list a:focus {
+      color: var(--link-hover-color);
+    }
+
+    footer {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 0.75rem;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer p {
+      margin: 0.2em 0;
+    }
+
+    h1 {
+text-align: center;    
+}
+
+  </style>
+  <div class="home-centered-header">
+    <header class="home-header-container">
+      <a href="/" class="logo">
+        <img src="/images/logo.png" alt="Cliven Streaming Logo" />
+      </a>
+      <nav>
+        <ul class="home-nav-list">
+          <li><a href="/services">Services</a></li>
+            <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h1>Terms and Conditions</h1>
+        <p>By using our services, you agree to the following terms and conditions:</p>
+        <p>2. You are responsible for maintaining the confidentiality of your account information and password.</p>
+        <p>3. You are responsible for all activities that occur under your account.</p>
+        <p>4. You agree to comply with all applicable laws and regulations when using our services.</p>
+        <p>5. You agree not to use our services for any illegal or unauthorized purpose.</p>
+        <p>6. You agree not to reproduce, duplicate, copy, sell, resell or exploit any portion of our services without our express written permission.</p>
+      </section>
+    </main>
+    <style>
+      main {
+      padding: 1rem;
+      }
+
+      section {
+      max-width: 600px;
+      width: 100%;
+      padding: 1rem;
+      box-sizing: border-box;
+      }
+
+      h1 {
+      font-size: 1.5rem;
+      }
+
+      p {
+      font-size: 1rem;
+      line-height: 1.5;
+      }
+
+      @media (max-width: 600px) {
+      h1 {
+        font-size: 1.25rem;
+      }
+
+      p {
+        font-size: 0.875rem;
+      }
+      }
+    </style>
+
+    <footer class="footer">
+      <p>© {new Date().getFullYear()} Your Company. All rights reserved.</p>
+      <p>
+        <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
+        <br>
+        Powered by <a href="https://kflix.me">Kesny Toussaint</a>
+      </p>
+    </footer>
+  </div>
+</Layout>

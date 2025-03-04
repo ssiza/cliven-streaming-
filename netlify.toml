@@ -1,0 +1,12 @@
+[build]
+  publish = "public"
+  command = "npm run build"
+
+[build.environment]
+  EMAIL_USER = "your-email@example.com"
+  EMAIL_PASS = "your-email-password"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
